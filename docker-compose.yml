@@ -1,8 +1,8 @@
 version: "3.4"
 
 x-common-variables: &common-variables
-  MYSQL_USER: sampleuser
-  MYSQL_PASSWORD: samplepassword
+  MYSQL_USER: root
+  MYSQL_PASSWORD: Tsaniah24*#
   MYSQL_DATABASE: db_todo_list
   REACT_APP_SERVER_PORT: 8000
 
@@ -45,7 +45,7 @@ services:
       - ./todo_list_api:/app
     links:
       - mysql-db
-    command: npm start
+    command: npm run start
   client:
     build: ./todo_list_frontend
     container_name: client_container
@@ -58,4 +58,4 @@ services:
       - ./todo_list_frontend/src:/app/src
     links:
       - server
-    command: npm start
+    command: npm run start
